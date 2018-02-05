@@ -6,7 +6,6 @@
 #  - CMAKE_VERSION=3.10.1
 #  - sh -c "$(curl -fsSkL https://raw.githubusercontent.com/openmeeg/ci-utils/master/travis/install_mkl.sh)"
 
-set -ex
 
 if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
     CMAKE_URL="https://cmake.org/files/v${CMAKE_VERSION%.[0-9]}/cmake-${CMAKE_VERSION}-Linux-x86_64.tar.gz"
