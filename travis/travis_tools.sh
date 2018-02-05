@@ -4,7 +4,7 @@
 #
 # To use them, add the following lines in .travis.yml:
 #  - export DL_DIR=$HOME/downloads # Export the path where to store downloaded files
-#  - sh -c "$(curl -fsSkL TODO)"
+#  - sh -c "$(curl -fsSkL https://raw.githubusercontent.com/openmeeg/ci-utils/master/travis/travis_tools.sh)"
 
 
 function _download() {

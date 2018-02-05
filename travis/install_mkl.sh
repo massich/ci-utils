@@ -4,7 +4,7 @@
 #
 # In .travis.yml, add this:
 #
-#  - sh -c "$(curl -fsSkL TODO)"
+#  - sh -c "$(curl -fsSkL https://raw.githubusercontent.com/openmeeg/ci-utils/master/travis/install_mkl.sh)"
 #
 # Note:
 # This script requires the openmeeg's travis tools from https://gist.github.com/massich/f382ec0181ce6603b38208f9dec3e4d4

@@ -14,7 +14,7 @@ Usage
 -----
 In order to avoid code injection [through detecting the pipelining on the server side](https://www.idontplaydarts.com/2016/04/detecting-curl-pipe-bash-server-side/), we recommend to call the scripts as follow:
 ```sh
-- sh -c "$(curl -fsSkL TODO)"
+- sh -c "$(curl -fsSkL ${SCRIPT_URL_PATH})"
 ```
 
 Todo
