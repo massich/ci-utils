@@ -6,6 +6,7 @@
 #  - export DL_DIR=$HOME/downloads # Export the path where to store downloaded files
 #  - sh -c "$(curl -fsSkL https://raw.githubusercontent.com/openmeeg/ci-utils/master/travis/travis_tools.sh)"
 
+set -ex
 
 function _download() {
     url="$1"; f="${2:-$(basename $url)}";

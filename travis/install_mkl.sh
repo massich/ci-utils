@@ -9,6 +9,7 @@
 # Note:
 # This script requires the openmeeg's travis tools from https://gist.github.com/massich/f382ec0181ce6603b38208f9dec3e4d4
 
+set -ex
 
 if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
   export MKL_INSTALL_DIR=$(pwd)/intel
