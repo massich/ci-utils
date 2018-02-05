@@ -4,7 +4,7 @@
 #
 # In .travis.yml, add this:
 #
-#  - "curl -fsSkL TODO | sh"
+#  - sh -c "$(curl -fsSkL TODO)"
 #
 # Note:
 # This script requires the openmeeg's travis tools from https://gist.github.com/massich/f382ec0181ce6603b38208f9dec3e4d4

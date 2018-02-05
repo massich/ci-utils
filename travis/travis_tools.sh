@@ -4,7 +4,7 @@
 #
 # To use them, add the following lines in .travis.yml:
 #  - export DL_DIR=$HOME/downloads # Export the path where to store downloaded files
-#  - "curl -fsSkL TODO | sh"
+#  - sh -c "$(curl -fsSkL TODO)"
 
 
 function _download() {
