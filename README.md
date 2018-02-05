@@ -22,3 +22,5 @@ Todo
 
 -[ ] Add tests to the scripts
 -[ ] Add usage examples
+
+<!-- trigger travis -->
