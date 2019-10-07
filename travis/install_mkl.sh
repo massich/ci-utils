@@ -10,6 +10,14 @@
 # This script requires the openmeeg's travis tools from https://gist.github.com/massich/f382ec0181ce6603b38208f9dec3e4d4
 
 if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
+  # FindMKL.cmake uses mkl_link_tool, which is a 32bits application !
+  sudo dpkg --add-architecture i386
+  sudo apt-get update
+  sudo apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386
+  sudo apt-get install binutils-2.26
+  export PATH=/usr/lib/binutils-2.26/bin:${PATH}
+
+  # Install MKL
   export MKL_INSTALL_DIR=$(pwd)/intel
   export ARCH_FNAME=l_mkl_2018.0.128.tgz
   travis_wait 30 download http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/12070/${ARCH_FNAME}
@@ -31,5 +39,5 @@ else  # Mac
   echo "PSET_INSTALL_DIR=${MKL_INSTALL_DIR}" >> silent.cfg
   sudo /Volumes/m_mkl_2018.4.231/m_mkl_2018.4.231.app/Contents/MacOS/install.sh -s ./silent.cfg
   . /opt/intel/mkl/bin/mklvars.sh intel64 ilp64
-  
+
 fi
