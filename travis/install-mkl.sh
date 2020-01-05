@@ -23,6 +23,8 @@ if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
 
   # FindMKL.cmake uses mkl_link_tool, which is a 32bits application !
   sudo apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386
+  dpkg -l | grep binutils
+  apt-cache policy binutils
   sudo apt-get install binutils-2.26
   export PATH=/usr/lib/binutils-2.26/bin:${PATH}
   sudo apt-get install intel-mkl-64bit-2020.0-088
