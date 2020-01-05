@@ -26,6 +26,7 @@ if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
   sudo apt-get install binutils-2.26
   export PATH=/usr/lib/binutils-2.26/bin:${PATH}
   sudo apt-get install intel-mkl-64bit-2020.0-088 intel-mkl-common-c-2020.0-166
+  . /opt/intel/compilers_and_libraries_2020.0.166/linux/mkl/bin/mklvars.sh intel64 ilp64
 
 else  # Mac
   export MKL_INSTALL_DIR=/opt/intel
