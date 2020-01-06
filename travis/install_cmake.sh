@@ -1,10 +1,10 @@
 #!/bin/sh
 
-# This script installs CMake. It requres a valid CMAKE_VERSION variable
+# This script installs CMake. It requires a valid CMAKE_VERSION variable
 #
 # In .travis.yml, add this:
 #  - CMAKE_VERSION=3.10.1
-#  - sh -c "$(curl -fsSkL https://raw.githubusercontent.com/openmeeg/ci-utils/master/travis/install_mkl.sh)"
+#  - sh -c "$(curl -fsSkL https://raw.githubusercontent.com/openmeeg/ci-utils/master/travis/install_cmake.sh)"
 
 
 if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
