@@ -9,9 +9,6 @@
 # Note:
 # This script requires the openmeeg's travis tools from https://gist.github.com/massich/f382ec0181ce6603b38208f9dec3e4d4
 
-set -x
-export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
-
 if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
   sudo dpkg --add-architecture i386
   wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
