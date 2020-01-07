@@ -15,7 +15,7 @@ if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
     mkdir swig-src && travis_retry wget --no-check-certificate -O - ${SWIG_URL} | tar --strip-components=1 -C swig-src -xz
     (cd swig-src && ./autogen.sh)
     mkdir swig
-    (mkdir swig-build && cd swig-build && ../swig-src/configure && make && make install DESTDIR=${DEPS_DIR}/swig)
+    (mkdir swig-build && cd swig-build && ../swig-src/configure --prefix=${swig_dir}/swig && make && make install)
     export PATH=${swig_dir}/swig/bin:${PATH}
     popd
 fi
