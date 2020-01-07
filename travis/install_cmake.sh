@@ -8,10 +8,15 @@
 
 
 if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
+    cmake_dir=${DEPS_DIR}/cmake
+    mkdir -p ${cmake_dir}
+    pushd ${cmake_dir}
     CMAKE_URL="https://cmake.org/files/v${CMAKE_VERSION%.[0-9]}/cmake-${CMAKE_VERSION}-Linux-x86_64.tar.gz"
-    rm -rf cmake
     mkdir cmake && travis_retry wget --no-check-certificate -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
-    export PATH=${DEPS_DIR}/cmake/bin:${PATH}
+    pwd
+    echo ${cmake_dir}
+    export PATH=${cmake_dir}/bin:${PATH}
+    popd
 else
     brew upgrade cmake
 fi
