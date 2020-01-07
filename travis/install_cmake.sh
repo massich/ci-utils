@@ -9,6 +9,8 @@
 
 if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
     cmake_dir=${DEPS_DIR}/cmake
+    ls -lR ${cmake_dir}
+    rm -rf ${cmake_dir}
     mkdir -p ${cmake_dir}
     pushd ${DEPS_DIR}
     CMAKE_URL="https://cmake.org/files/v${CMAKE_VERSION%.[0-9]}/cmake-${CMAKE_VERSION}-Linux-x86_64.tar.gz"
