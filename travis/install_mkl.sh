@@ -19,13 +19,13 @@ if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
 
   # Install MKL
   export MKL_INSTALL_DIR=$(pwd)/intel
-  export ARCH_FNAME=l_mkl_2018.0.128.tgz
-  travis_wait 30 download http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/12070/${ARCH_FNAME}
+  export ARCH_FNAME=l_mkl_2018.4.274.tgz
+  travis_wait 30 download http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/13725/${ARCH_FNAME}
   tar -xzf $DL_DIR/${ARCH_FNAME}
-  cat l_mkl_2018.0.128/silent.cfg | grep -v EULA | grep -v PSET_INSTALL_DIR > silent.cfg
+  cat l_mkl_2018.4.274/silent.cfg | grep -v EULA | grep -v PSET_INSTALL_DIR > silent.cfg
   echo "ACCEPT_EULA=accept" >> silent.cfg
   echo "PSET_INSTALL_DIR=${MKL_INSTALL_DIR}" >> silent.cfg
-  ./l_mkl_2018.0.128/install.sh --user-mode -s ./silent.cfg
+  ./l_mkl_2018.4.274/install.sh --user-mode -s ./silent.cfg
   export LD_LIBRARY_PATH="${MKL_INSTALL_DIR}/mkl/lib/intel64/:${LD_LIBRARY_PATH}"
   . ${MKL_INSTALL_DIR}/mkl/bin/mklvars.sh intel64 ilp64
 
