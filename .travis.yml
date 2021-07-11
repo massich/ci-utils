@@ -1,6 +1,8 @@
 language: minimal
 
 script:
+  - export DL_DIR=$HOME/downloads # Export the path where to store downloaded files
+  - sh -c "$(curl -fsSkL https://raw.githubusercontent.com/openmeeg/ci-utils/master/travis/travis_tools.sh)"
 
 after_success:
 
